@@ -1,17 +1,31 @@
-import React from 'react'
+import React from "react";
+import Navbar from "./components/Navbar";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import { AuthContextProvider } from "./context/authContext";
+import { Account, Login, SignUp } from "./pages";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 
 function App() {
-
   return (
     <>
-    <div>
-    <h1 className="text-3xl font-bold">
-      Hello world!
-    </h1>
-    </div>
+      <AuthContextProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/account" 
+          element={
+            <ProtectedRoute>
+              <Account />
+            </ProtectedRoute>
+          } />
+        </Routes>
+      </AuthContextProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
