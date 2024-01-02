@@ -2,6 +2,7 @@ import axios from 'axios';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 import React, { useEffect, useState } from 'react'
 import Movies from './Movies';
+import Footer from './Footer';
 
 const Row = ({title, fetchURL, rowID}) => {
   const [movies, setMovies] = useState([]);
@@ -42,6 +43,7 @@ const Row = ({title, fetchURL, rowID}) => {
         className="bg-white right-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block" size={40}/>
 
       </div>
+      
     </>
   )
 }

@@ -15,14 +15,31 @@ const Navbar = () => {
     }
   };
   return (
-    <div className="flex items-center justify-between p-4 z-[100] absolute w-full">
+    <div className="flex items-center justify-between p-4 z-[100] w-full absolute">
       <Link to="/">
-        <h1 className="text-red-600 text-4xl font-bold cursor-pointer">
+        <h1 className="text-red-600 lg:text-4xl font-bold cursor-pointer text-3xl">
           NETFLIX
         </h1>
       </Link>
+      
+      
+        <div className="flex items-center">
+        {/* <Link to="/">
+          <button className="text-white hover:text-red-500 font-bold pr-4">Home </button>
+        </Link> */}
+        <Link to="/tvshows">
+        <button className="text-white text-base hover:text-red-500 pr-2 font-bold ">
+          TvShows
+        </button>
+        </Link>
+        <Link to="/movie">
+        <button className="text-white hover:text-red-500 font-bold pr-4">
+          Movies
+        </button>
+        </Link>
+      
       {user?.email ? (
-        <div>
+        <div className="w-full flex items-center justify-end">
           <Link to="/account">
             <button className="text-white pr-4">Account</button>
           </Link>
@@ -45,6 +62,7 @@ const Navbar = () => {
           </Link>
         </div>
       )}
+        </div>
     </div>
   );
 };

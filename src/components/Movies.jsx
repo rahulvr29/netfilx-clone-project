@@ -3,6 +3,7 @@ import { FaHeart, FaRegHeart } from 'react-icons/fa'
 import { UserAuth } from '../context/authContext'
 import { db } from '../firebase'
 import { doc, updateDoc, arrayUnion} from 'firebase/firestore'
+import Footer from './Footer'
 
 const Movies = ({item }) => {
   const [like, setLike] = useState(false);
@@ -27,6 +28,7 @@ const Movies = ({item }) => {
     }
   };
   return (
+    <>
     <div className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2" >
                 <img 
                 className='w-full h-auto block '
@@ -43,7 +45,9 @@ const Movies = ({item }) => {
                     }
                   </p>
                 </div>
-              </div>
+    </div>
+    
+    </>
   )
 }
 

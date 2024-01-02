@@ -1,5 +1,6 @@
 import React from 'react'
 import FavShows from '../components/FavShows'
+import { Footer } from '../components'
 const Account = () => {
   return (
     <div className='w-full text-white'>
@@ -13,6 +14,9 @@ const Account = () => {
       <h1 className='text-3xl md:text-5xl font-bold'>My Shows</h1>
     </div>
     <FavShows/>
+    <div className='mt-5'>
+      <Footer/>
+    </div>
   </div>
   )
 }

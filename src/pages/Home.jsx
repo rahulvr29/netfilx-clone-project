@@ -1,5 +1,5 @@
 import React from 'react'
-import { Main, Row } from '../components'
+import { Footer, Main, Row } from '../components'
 import requests from '../requestKey'
 
 const Home = () => {
@@ -11,6 +11,7 @@ const Home = () => {
       <Row rowID='3' title='Popular Movies & Shows ' fetchURL={requests.requestPopular} />
       <Row rowID='4' title='Trending Movies & Shows' fetchURL={requests.requestTrending} />
       <Row rowID='5' title='Horror Movies & Shows' fetchURL={requests.requestHorror} />
+      <Footer/>
     </div>
   )
 }
